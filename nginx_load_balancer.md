@@ -55,7 +55,8 @@ upstream appIpHash { #IP Hash
     server 192.168.0.12;
     server 192.168.0.13;
 }
-log_format upstreamlog 'remote_addr: $remote_addr | ' #Log Format
+#Log Format
+log_format upstreamlog 'remote_addr: $remote_addr | '
                 'remote_user: $remote_user | '
                 'time_local: $time_local | '
                 'request: $request | '
@@ -89,7 +90,7 @@ server {
         }
         location /metadata { #Caching, Pastikan endpoint /metadata sudah di buat di aplikasinya
             proxy_cache cache_one;
-            proxy_cache_min_uses 5; #cache akan aktif minimal kalau user 5x akses
+            proxy_cache_min_uses 5; #Cache akan aktif minimal kalau user 5x akses
             proxy_cache_methods HEAD GET;
             proxy_cache_valid 200 304 30s; #Cache cuma berlaku selama 30 detik
             proxy_cache_key $uri;
