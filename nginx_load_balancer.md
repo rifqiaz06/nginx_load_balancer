@@ -113,9 +113,6 @@ sudo apt install ccze
 sudo tail -f /var/log/nginx/access.log atau error.log | ccze
 sudo tail -f /var/log/nginx/app/app.log | ccze
 ```
-
-Untuk monitoring bisa juga di integrasikan dengan Grafana, Prometheus, ELK, dan sebagainya.
-
 #### Optional Enhancements:
 
 - Failover: use `backup;` server
